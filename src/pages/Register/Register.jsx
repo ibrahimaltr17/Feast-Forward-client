@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { FaEye } from "react-icons/fa";
 import google from '../../assets/google.png';
-import { AuthContext } from '../../context/AuthContext';
 import Swal from 'sweetalert2';
 import { Link, Navigate, useNavigate } from 'react-router';
 import { updateProfile } from 'firebase/auth';
 import { showError, showSuccess } from '../../utility/sweetAlert';
+import AuthProvider from '../../Provider/AuthProvider';
+import { AuthContext } from '../../context/AuthContext';
 
 const Register = () => {
 
@@ -83,7 +84,7 @@ const Register = () => {
     }
 
     return (
-        <div className='bg-green-900 h-screen lg:flex relative'>
+        <div className='bg-orange-600 h-screen lg:flex relative'>
             <Link to="/"><button className='btn btn-circle absolute right-4 top-4'>X</button></Link>
             <div className='w-5/12 hidden lg:block h-screen px-5 text-white text-center'>
                 <div className='lg:flex h-full flex-col items-center justify-center'>

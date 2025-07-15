@@ -3,78 +3,78 @@ import google from '../../assets/google.png'
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router';
-// import { AuthContext } from '../../context/AuthContext';
-// import { showError, showSuccess, showWarning } from '../../utility/sweetAlert';
+import { showError, showSuccess, showWarning } from '../../utility/sweetAlert';
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
-    // const [error, setError] = useState("")
-    // const { signInUser, googleLogIn, forgetPass } = useContext(AuthContext)
-    // const location = useLocation();
-    // const navigate = useNavigate();
-    // const emailRef = useRef()
-    // const [showPassword, setShowPassword] = useState(false)
+    const [error, setError] = useState("")
+    const { signInUser, googleLogIn, forgetPass } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+    const emailRef = useRef()
+    const [showPassword, setShowPassword] = useState(false)
 
-    // const handleSignIn = e => {
-    //     e.preventDefault();
-    //     const form = e.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
+    const handleSignIn = e => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
 
-    //     // firebase sign in send 
-    //     signInUser(email, password)
-    //         .then(result => {
-    //             const singInInfo = {
-    //                 email,
-    //                 lastSignInTime: result.user?.metadata?.lastSignInTime
-    //             }
-    //             fetch('https://server-leaf-log.vercel.app/users', {
-    //                 method: 'PATCH',
-    //                 headers: {
-    //                     'content-type': 'application/json'
-    //                 },
-    //                 body: JSON.stringify(singInInfo)
-    //             })
-    //                 .then(res => res.json())
-    //                 .then(data => {
-    //                     showSuccess('Login Successful!', 'Welcome back!',)
-    //                     navigate(location.state || "/");
-    //                 })
-    //         })
-    //         .catch(error => {
-    //             const errorCode = error.code;
-    //             setError(errorCode)
-    //             showError('Login Failed', error.message)
-    //         })
-    // }
+        // firebase sign in send 
+        signInUser(email, password)
+            .then(result => {
+                const singInInfo = {
+                    email,
+                    lastSignInTime: result.user?.metadata?.lastSignInTime
+                }
+                fetch('https://server-leaf-log.vercel.app/users', {
+                    method: 'PATCH',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(singInInfo)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        showSuccess('Login Successful!', 'Welcome back!',)
+                        navigate(location.state || "/");
+                    })
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                setError(errorCode)
+                showError('Login Failed', error.message)
+            })
+    }
 
-    // const handleGoogleLogIn = () => {
-    //     googleLogIn()
-    //         .then(result => {
-    //             const user = result.user;
-    //             showSuccess('Login Successful!', 'Welcome back!')
-    //             navigate(location.state?.path || "/");
-    //         })
-    //         .catch(error => {
-    //             console.error("Google sign-in error:", error.message);
-    //             setError(error.message);
-    //             showError('Login Failed', error.message)
-    //         });
-    // }
+    const handleGoogleLogIn = () => {
+        googleLogIn()
+            .then(result => {
+                const user = result.user;
+                showSuccess('Login Successful!', 'Welcome back!')
+                navigate(location.state?.path || "/");
+            })
+            .catch(error => {
+                console.error("Google sign-in error:", error.message);
+                setError(error.message);
+                showError('Login Failed', error.message)
+            });
+    }
 
-    // const handleForgetPassword = (e) => {
-    //     e.preventDefault();
-    //     const email = emailRef.current.value;
-    //     setError('')
-    //     forgetPass(email)
-    //         .then(() => {
-    //             showWarning('Mail Sent', 'Please check your email')
-    //         }).catch((error) => {
-    //             setError(error.message)
-    //         });
-    // }
+    const handleForgetPassword = (e) => {
+        e.preventDefault();
+        const email = emailRef.current.value;
+        setError('')
+        forgetPass(email)
+            .then(() => {
+                showWarning('Mail Sent', 'Please check your email')
+            }).catch((error) => {
+                setError(error.message)
+            });
+    }
 
     return (
-        <div className='bg-green-900 h-screen lg:flex relative'>
+        <div className='bg-orange-600 h-screen lg:flex relative'>
             <Link to="/"><button className='btn btn-circle absolute right-4 top-4'>X</button></Link>
             <div className='w-5/12 hidden lg:block h-screen px-5 text-white text-center'>
                 <div className='lg:flex h-full flex-col items-center justify-center'>

@@ -1,15 +1,28 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router';
 import './Navbar.css'
+import { AuthContext } from '../../context/AuthContext';
+import { showError, showWarning } from '../../utility/sweetAlert';
 
 const Navbar = () => {
     const links = <>
         <NavLink className='hover:text-amber-900 text-amber-900' to="/">Home</NavLink>
         <NavLink className='hover:text-amber-900 text-amber-900' to="/findTutors">Available Foods</NavLink>
-        <NavLink className='hover:text-amber-900 text-amber-900' to="/addTutorials">Add Food </NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/addFood">Add Food </NavLink>
         <NavLink className='hover:text-amber-900 text-amber-900' to="/myTutorials">Manage My Foods</NavLink>
         <NavLink className='hover:text-amber-900 text-amber-900' to="/myBookedTutors">My Food Request</NavLink>
     </>
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut().then(() => {
+            showWarning('Logged Out Successfully', 'See you again soon!')
+        }).catch((error) => {
+            showError(error)
+        });
+
+    }
 
     return (
         <div className="navbar w-full bg-red-100">
@@ -39,7 +52,7 @@ const Navbar = () => {
             <div className="navbar-end flex gap-3">
                 {/* {<ThemeToggle></ThemeToggle>} */}
                 <div className="dropdown dropdown-hover dropdown-left dropdown-center">
-                    {/* {
+                    {
                         user ? <div className="avatar max-w-8">
                             <div className="ring-primary bg-white ring-offset-base-100 w-12s rounded-full ring-2 ring-offset-2">
                                 <img src={user.photoURL ? user.photoURL :
@@ -55,19 +68,17 @@ const Navbar = () => {
                         <p tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                             {user.displayName}
                         </p>
-                    )} */}
+                    )}
                 </div>
-                {/* {
+                {
                     user ?
                         <Link to="/">
-                            <button onClick={handleLogOut} className="btn bg-green-900 text-white">LogOut</button>
+                            <button onClick={handleLogOut} className="btn bg-orange-600 text-white">LogOut</button>
                         </Link>
                         : <Link to="/login">
-                            <button className="btn bg-green-900 text-white">Login</button>
+                            <button className="btn bg-orange-600  text-white">Login</button>
                         </Link>
-                } */}
-                <button className="btn bg-orange-600 text-white">Login</button>
-
+                }
             </div>
 
         </div>
