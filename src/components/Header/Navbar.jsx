@@ -4,14 +4,15 @@ import './Navbar.css'
 
 const Navbar = () => {
     const links = <>
-        <NavLink className='hover:text-amber-200' to="/">Home</NavLink>
-        <NavLink className='hover:text-amber-200' to="/allPlant">All Plants</NavLink>
-        <NavLink className='hover:text-amber-200' to="/addPlant">Add Plant</NavLink>
-        <NavLink className='hover:text-amber-200' to="/myPlant">My Plants</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/">Home</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/findTutors">Available Foods</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/addTutorials">Add Food </NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/myTutorials">Manage My Foods</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/myBookedTutors">My Food Request</NavLink>
     </>
 
     return (
-        <div className="navbar w-full bg-[#5D5FEF]">
+        <div className="navbar w-full bg-red-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +27,7 @@ const Navbar = () => {
                 <a href="">
                     <div className='flex items-center gap-2'>
                         <img className='max-w-[30px]' src='../../assets/react.svg' alt="" />
-                        <h4 className='text-2xl font-semibold kaushan-script text-white'>LangSync</h4>
+                        <h4 className='text-2xl font-semibold kaushan-script text-blue-900'>FeastForward</h4>
                     </div>
                 </a>
             </div>
@@ -65,7 +66,7 @@ const Navbar = () => {
                             <button className="btn bg-green-900 text-white">Login</button>
                         </Link>
                 } */}
-                <button className="btn bg-amber-500 text-white">Login</button>
+                <button className="btn bg-orange-600 text-white">Login</button>
 
             </div>
 
