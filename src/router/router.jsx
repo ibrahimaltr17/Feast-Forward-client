@@ -8,6 +8,7 @@ import FindTutor from "../pages/FindTutor/FindTutor";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AddFood from "../pages/AddFood/AddFood";
+import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/availableFood',
-        Component: FindTutor
+        Component: AvailableFoods
       },
       {
         path: '/addFood',
