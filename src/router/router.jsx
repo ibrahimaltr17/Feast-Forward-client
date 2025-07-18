@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         Component: Home
       },
       {
-        path: '/findTutors',
+        path: '/availableFood',
         Component: FindTutor
       },
       {

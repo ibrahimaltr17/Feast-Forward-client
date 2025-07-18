@@ -7,10 +7,10 @@ import { showError, showWarning } from '../../utility/sweetAlert';
 const Navbar = () => {
     const links = <>
         <NavLink className='hover:text-amber-900 text-amber-900' to="/">Home</NavLink>
-        <NavLink className='hover:text-amber-900 text-amber-900' to="/findTutors">Available Foods</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/availableFood">Available Foods</NavLink>
         <NavLink className='hover:text-amber-900 text-amber-900' to="/addFood">Add Food </NavLink>
-        <NavLink className='hover:text-amber-900 text-amber-900' to="/myTutorials">Manage My Foods</NavLink>
-        <NavLink className='hover:text-amber-900 text-amber-900' to="/myBookedTutors">My Food Request</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/myFood">Manage My Foods</NavLink>
+        <NavLink className='hover:text-amber-900 text-amber-900' to="/myRequestedFood">My Food Request</NavLink>
     </>
 
     const { user, logOut } = useContext(AuthContext)

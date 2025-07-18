@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase/firebase.init';
+import axios from 'axios';
 // import { GoogleAuthProvider } from 'firebase/auth/web-extension';
 
 const AuthProvider = ({ children }) => {
@@ -44,6 +45,13 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+
+            axios.get('http://localhost:3000/', {
+                headers: {
+                    Authorization: `Bearer ${currentUser.accessToken}`
+                }
+            });
+
             setLoading(false)
         })
         return () => {

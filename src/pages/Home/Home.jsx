@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Banner from '../../components/Banner/Banner';
 import State from '../../components/State/State';
-import ContainerLanguage from '../../components/ContainerLanguage/ContainerLanguage';
 import Feedback from '../../components/Feedback/Feedback';
+import ContainerFood from '../../components/ContainerFood/ContainerFood';
+import { AuthContext } from '../../context/AuthContext';
 
 const Home = () => {
+    const {user}= useContext(AuthContext);
+    console.log(user)
     return (
         <div>
             <Banner></Banner>
             <section className='px-4'>
                 <State></State>
-                <ContainerLanguage></ContainerLanguage>
+                <ContainerFood></ContainerFood>
+
                 <Feedback></Feedback>
             </section>
         </div>
