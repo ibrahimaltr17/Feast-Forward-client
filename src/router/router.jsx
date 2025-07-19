@@ -11,6 +11,7 @@ import AddFood from "../pages/AddFood/AddFood";
 import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
 import DetailsFood from "../pages/DetailsFood/DetailsFood";
 import axios from "axios";
+import MyFood from "../pages/MyFood/MyFood";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
         Component: AddFood
       },
       {
-        path: '/my'
+        path: '/myFood',
+        Component: MyFood
       },
       {
         path: '/details/:foodId',
