@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const CardAvailFood = ({allFood}) => {
     console.log(allFood)
@@ -17,7 +18,9 @@ const CardAvailFood = ({allFood}) => {
                 </div> 
                 <h4 className='text-2xl font-bold'>{allFood.foodName}</h4>
                 <p className='text-gray-500 font-semibold'>Expire Date: {allFood.expiry}</p>
+                <Link to={`/details/${allFood._id}`}>
                 <button className='btn bg-orange-600 font-bold text-white'>View Details</button>
+                </Link>
             </div>
         </div>
     );

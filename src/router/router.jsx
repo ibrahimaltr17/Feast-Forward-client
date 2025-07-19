@@ -9,6 +9,8 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AddFood from "../pages/AddFood/AddFood";
 import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
+import DetailsFood from "../pages/DetailsFood/DetailsFood";
+import axios from "axios";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: '/addFood',
         Component: AddFood
+      },
+      {
+        path: '/details/:foodId',
+        Component: DetailsFood,
+        loader: async ({params}) => {
+          const data = await axios.get(`http://localhost:3000/details/${params.foodId}`)
+          return data
+        }
       }
     ]
   },
