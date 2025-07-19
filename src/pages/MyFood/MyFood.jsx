@@ -5,10 +5,7 @@ import CardMyFood from '../../components/CardMyFood/CardMyFood';
 
 const MyFood = () => {
     const { user } = useContext(AuthContext)
-    console.log(user)
     const [myFood, setMyFood]=useState([])
-    console.log(myFood)
-
     useEffect(()=>{
         axios.get('http://localhost:3000/myFood', {
                 headers: {
@@ -21,7 +18,7 @@ const MyFood = () => {
         <div className='my-20 px-4 space-y-10'>
             <h1 className='text-3xl text-center font-bold'>Manage Food</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-                {myFood.map((food)=> (<CardMyFood key={food._id} food={food}></CardMyFood>))}
+                {myFood.map((food)=> (<CardMyFood key={food._id} setMyFood={setMyFood} food={food}></CardMyFood>))}
             </div>
         </div>
     );

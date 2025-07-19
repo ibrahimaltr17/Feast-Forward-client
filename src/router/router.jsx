@@ -4,7 +4,6 @@ import {
 import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
 import Error from "../pages/Error/Error";
-import FindTutor from "../pages/FindTutor/FindTutor";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AddFood from "../pages/AddFood/AddFood";
@@ -13,6 +12,7 @@ import DetailsFood from "../pages/DetailsFood/DetailsFood";
 import axios from "axios";
 import MyFood from "../pages/MyFood/MyFood";
 import RequestedFood from "../pages/RequestedFood/RequestedFood";
+import UpdateFood from "../pages/UpdateFood/UpdateFood";
 
 const router = createBrowserRouter([
   {
@@ -39,15 +39,23 @@ const router = createBrowserRouter([
       {
         path: '/details/:foodId',
         Component: DetailsFood,
-        loader: async ({params}) => {
+        loader: async ({ params }) => {
           const res = await axios.get(`http://localhost:3000/details/${params.foodId}`)
           return res.data
         }
       },
-     {
-      path: '/myRequestedFoods',
-      Component: RequestedFood
-     }
+      {
+        path: '/myRequestedFoods',
+        Component: RequestedFood
+      },
+      {
+        path: '/updateFood/:foodId',
+        Component: UpdateFood,
+        loader: async ({ params }) => {
+          const res = await axios.get(`http://localhost:3000/food/${params.foodId}`);
+          return res.data;
+        }
+      }
     ]
   },
   {

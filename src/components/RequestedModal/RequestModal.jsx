@@ -1,13 +1,20 @@
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 const RequestModal = ({ food, user, additionalNotes, setAdditionalNotes, onSubmit }) => {
     const modalRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (modalRef.current) {
             modalRef.current.showModal();
         }
     }, []);
+
+    const handleSubmit = async () => {
+        await onSubmit(); 
+        navigate('/availableFood'); 
+    };
 
     return (
         <dialog id="my_modal_1" className="modal" ref={modalRef}>
@@ -16,7 +23,7 @@ const RequestModal = ({ food, user, additionalNotes, setAdditionalNotes, onSubmi
                 <div className="space-y-2 text-left">
                     <p><strong>Food Name:</strong> {food.foodName}</p>
                     <p><strong>Food ID:</strong> {food._id}</p>
-                    <p><strong>Food Donator:</strong> {food.donorName} ({food.donorEmail})</p>
+                    <p><strong>Food Donator:</strong> {food.donorName}</p>
                     <p><strong>Your Email:</strong> {user?.email}</p>
                     <p><strong>Request Date:</strong> {new Date().toLocaleString()}</p>
                     <p><strong>Pickup Location:</strong> {food.location}</p>
@@ -35,7 +42,7 @@ const RequestModal = ({ food, user, additionalNotes, setAdditionalNotes, onSubmi
                     <form method="dialog">
                         <button className="btn btn-outline mr-2">Cancel</button>
                     </form>
-                    <button onClick={onSubmit} className="btn bg-orange-600 text-white hover:bg-orange-700">Submit Request</button>
+                    <button onClick={handleSubmit} className="btn bg-orange-600 text-white hover:bg-orange-700">Submit Request</button>
                 </div>
             </div>
         </dialog>

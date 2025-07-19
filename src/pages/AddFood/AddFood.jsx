@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
+import { showError, showSuccess } from '../../utility/sweetAlert';
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
@@ -35,10 +36,9 @@ const AddFood = () => {
     try {
       const res = await axios.post('http://localhost:3000/addFood', newFood);
       console.log(res.data);
-      alert('Food added successfully!');
+      showSuccess('Done','Your food Added')
     } catch (error) {
-      console.error('Error adding food:', error);
-      alert('Something went wrong!');
+      showError('Ooops',error)
     }
   };
 
