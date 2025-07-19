@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const CardAvailFood = ({allFood}) => {
-    console.log(allFood)
     return (
         <div className='rounded-4xl border p-5 flex justify-between gap-3 w-fit'>
             <div className='rounded-4xl max-w-[150px]'>

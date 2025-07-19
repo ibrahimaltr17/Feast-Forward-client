@@ -31,6 +31,9 @@ const router = createBrowserRouter([
         Component: AddFood
       },
       {
+        path: '/my'
+      },
+      {
         path: '/details/:foodId',
         Component: DetailsFood,
         loader: async ({params}) => {
