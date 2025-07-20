@@ -8,49 +8,47 @@ const Feedback = () => {
             </div>
             <ul className="list bg-base-100 rounded-box shadow-md">
 
-                <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Top feedback from our clients</li>
+                <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Top feedback from our users</li>
 
                 <li className="list-row">
-                    <div><img className="size-10 rounded-box" src="https://static.vecteezy.com/system/resources/previews/039/334/802/non_2x/ai-generated-indian-female-student-free-photo.jpg" /></div>
+                    <div><img className="size-10 rounded-box" src="https://randomuser.me/api/portraits/women/45.jpg" /></div>
                     <div>
-                        <div>Samiya Rahman</div>
-                        <div className="text-xs uppercase font-semibold opacity-60">Computer Science Student, Dhaka</div>
+                        <div>Naznin Akter</div>
+                        <div className="text-xs uppercase font-semibold opacity-60">University Student, Dhaka</div>
                     </div>
                     <p className="list-col-wrap text-xs">
-                        "I've been using LangSync for the past three months to improve my Spanish, and the progress I’ve made is incredible. The tutors are native speakers, very patient, and they tailor each session to my goals. I especially love the flexibility of scheduling — I can learn even with a busy university routine. The platform is clean, intuitive, and I never had a technical issue. Highly recommended!"
+                        "This platform helped me get free meals during a really tough time. The request system is simple, and the donors are kind. I love how I can track my food requests without any confusion. Truly a helpful service!"
                     </p>
-                    
                     <button className="btn btn-square btn-ghost">
-                        <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
+                        ❤️
                     </button>
                 </li>
 
                 <li className="list-row">
-                    <div><img className="size-10 rounded-box" src="https://media.istockphoto.com/id/524259493/photo/indian-male-student.jpg?s=612x612&w=0&k=20&c=CKcc7wHKkzYfp4UTjNYXzXszW9R3pd4GP3-34q4gqM4=" /></div>
+                    <div><img className="size-10 rounded-box" src="https://randomuser.me/api/portraits/men/32.jpg" /></div>
                     <div>
-                        <div>Rafsan Ahmed</div>
-                        <div className="text-xs uppercase font-semibold opacity-60">Language Enthusiast, Chittagong</div>
+                        <div>Mahmud Hasan</div>
+                        <div className="text-xs uppercase font-semibold opacity-60">Shop Owner, Chittagong</div>
                     </div>
                     <p className="list-col-wrap text-xs">
-                        "As someone new to Japanese, I was nervous about starting. But LangSync made it easy. My tutor made me feel comfortable from day one, and we started with simple phrases before moving into grammar. I enjoy how each lesson builds on the last. Plus, the tutor reviews and ratings helped me find the perfect match quickly."
+                        "I had some extra food from my shop and didn’t want it to go to waste. Sharing it through this site was easy and efficient. I could see who requested it and when they planned to pick it up. Great initiative!"
                     </p>
-                    
                     <button className="btn btn-square btn-ghost">
-                        <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
+                        👍
                     </button>
                 </li>
 
                 <li className="list-row">
-                    <div><img className="size-10 rounded-box" src="https://media.istockphoto.com/id/1410798175/photo/smiling-indian-woman-formal-corporate-office-employee-at-workplace-looking-at-the-camera.jpg?s=1024x1024&w=is&k=20&c=dJ2TopBFTQpLDMGBV7gElL12hpnoy5-f9UZgKiWHnA0=" /></div>
+                    <div><img className="size-10 rounded-box" src="https://randomuser.me/api/portraits/women/68.jpg" /></div>
                     <div>
-                        <div>Anika Chowdhury</div>
-                        <div className="text-xs uppercase font-semibold opacity-60">HR Professional, Sylhet</div>
+                        <div>Raisa Sultana</div>
+                        <div className="text-xs uppercase font-semibold opacity-60">NGO Volunteer, Sylhet</div>
                     </div>
                     <p className="list-col-wrap text-xs">
-                        "LangSync is perfect for working people like me. I can book classes in the evening or even on weekends. I’ve been practicing English for job interviews, and my tutor helped me refine my speaking, pronunciation, and confidence. After just 5 sessions, I already feel more fluent"
+                        "We use this platform regularly to distribute leftover food from our charity events. It’s easy to post, and people respond quickly. The update and delete options make management smooth. Highly recommended!"
                     </p>
                     <button className="btn btn-square btn-ghost">
-                        <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
+                        🌟
                     </button>
                 </li>
 

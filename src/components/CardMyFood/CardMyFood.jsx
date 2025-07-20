@@ -34,7 +34,7 @@ const CardMyFood = ({ food, setMyFood }) => {
     };
 
     return (
-        <div className='border rounded-3xl p-3 flex'>
+        <div className='border rounded-3xl p-3 flex gap-3'>
             <div>
                 <img className='w-[150px]' src={food.foodImage} alt="" />
             </div>

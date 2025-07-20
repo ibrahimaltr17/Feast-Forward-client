@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         path: '/updateFood/:foodId',
         Component: UpdateFood,
         loader: async ({ params }) => {
-          const res = await axios.get(`https://server-feast-forward.vercel.app/food/${params.foodId}`);
+          const res = await axios.get(`https://server-feast-forward.vercel.app/updateFood/${params.foodId}`);
           return res.data;
         }
       }

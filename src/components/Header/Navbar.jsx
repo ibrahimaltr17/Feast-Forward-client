@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import './Navbar.css'
 import { AuthContext } from '../../context/AuthContext';
 import { showError, showWarning } from '../../utility/sweetAlert';
+import logo from '../../assets/Logo.png'
 
 const Navbar = () => {
     const links = <>
@@ -39,8 +40,7 @@ const Navbar = () => {
                 </div>
                 <a href="">
                     <div className='flex items-center gap-2'>
-                        <img className='max-w-[30px]' src='../../assets/react.svg' alt="" />
-                        <h4 className='text-2xl font-semibold kaushan-script text-blue-900'>FeastForward</h4>
+                        <img className='max-w-[120px]' src={logo} alt="" />
                     </div>
                 </a>
             </div>

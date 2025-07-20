@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from 'react-router';
 import { useState } from 'react';
 import axios from 'axios';
+import { showSuccess } from '../../utility/sweetAlert';
 
 const formatDateTimeLocal = (dateStr) => {
   const date = new Date(dateStr);
@@ -23,8 +24,8 @@ const UpdateFood = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://server-feast-forward.vercel.app/food/${food._id}`, foodData);
-      alert('Food updated');
+      await axios.put(`https://server-feast-forward.vercel.app/updateFood/${food._id}`, foodData);
+      showSuccess('Updated','Your food successfully updated')
       navigate('/myFood');
     } catch (err) {
       console.error(err);
