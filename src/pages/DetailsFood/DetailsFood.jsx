@@ -11,7 +11,7 @@ const DetailsFood = () => {
     const [additionalNotes, setAdditionalNotes] = useState('');
 
     const handleRequest = () => {
-        axios.patch(`http://localhost:3000/requestedFood/${foodData._id}`, {
+        axios.patch(`https://server-feast-forward.vercel.app/requestedFood/${foodData._id}`, {
             notes: additionalNotes,
         }, {
             headers: {

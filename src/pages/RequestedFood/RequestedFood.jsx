@@ -9,7 +9,7 @@ const RequestedFood = () => {
   useEffect(() => {
     const fetchData = async () => {
       const token = await user.getIdToken();
-      const res = await axios.get('http://localhost:3000/myRequestedFoods', {
+      const res = await axios.get('https://server-feast-forward.vercel.app/myRequestedFoods', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRequestedFoods(res.data);

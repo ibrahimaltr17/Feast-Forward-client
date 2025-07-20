@@ -7,7 +7,7 @@ const MyFood = () => {
     const { user } = useContext(AuthContext)
     const [myFood, setMyFood]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:3000/myFood', {
+        axios.get('https://server-feast-forward.vercel.app/myFood', {
                 headers: {
                     Authorization: `Bearer ${user?.accessToken}`
                 }

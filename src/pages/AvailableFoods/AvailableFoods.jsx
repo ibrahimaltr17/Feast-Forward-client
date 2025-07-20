@@ -10,7 +10,7 @@ const AvailableFoods = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/availableFoods')
+        axios.get('https://server-feast-forward.vercel.app/availableFoods')
             .then((res) => setFood(res.data));
     }, []);
 
@@ -18,7 +18,6 @@ const AvailableFoods = () => {
         setIsThreeCol(prev => !prev);
     };
 
-    // 🔍 Filtered data based on search
     const filteredFood = food.filter(item =>
         item.foodName.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -26,8 +25,6 @@ const AvailableFoods = () => {
     return (
         <div className='my-20 space-y-10 mx-auto px-4 '>
             <h2 className='text-center text-4xl font-bold'>Available Foods</h2>
-
-            {/* 🔍 Search + Layout Toggle */}
             <div className="flex flex-col items-center justify-between space-y-5 gap-4 mx-auto mb-4">
                 <input
                     type="text"
@@ -44,8 +41,6 @@ const AvailableFoods = () => {
                 </button>
             </div>
 
-
-            {/* 🧾 Food Cards */}
             <section className={`grid gap-4 ${isThreeCol ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'}`}>
                 {filteredFood.length > 0 ? (
                     filteredFood.map(allFood => (

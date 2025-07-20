@@ -7,7 +7,7 @@ const ContainerFood = () => {
     const [featuredFoods, setFeaturedFoods] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/featuredFoods')
+        axios.get('https://server-feast-forward.vercel.app/featuredFoods')
             .then((res) => setFeaturedFoods(res.data));
     }, [])
 

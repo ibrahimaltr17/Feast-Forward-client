@@ -43,21 +43,27 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser);
+  const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    setUser(currentUser);
 
-            axios.get('http://localhost:3000/', {
-                headers: {
-                    Authorization: `Bearer ${currentUser.accessToken}`
-                }
-            });
+    if (currentUser) {
+      try {
+        await axios.get('https://server-feast-forward.vercel.app/', {
+          headers: {
+            Authorization: `Bearer ${currentUser.accessToken}`
+          }
+        });
+      } catch (error) {
+        console.error('Axios request failed:', error);
+      }
+    }
 
-            setLoading(false)
-        })
-        return () => {
-            unsubscribe()
-        }
-    }, [])
+    setLoading(false);
+  });
+
+  return () => unsubscribe();
+}, []);
+
 
     const authData = {
         user,

@@ -4,6 +4,7 @@ import State from '../../components/State/State';
 import Feedback from '../../components/Feedback/Feedback';
 import ContainerFood from '../../components/ContainerFood/ContainerFood';
 import { AuthContext } from '../../context/AuthContext';
+import MostRequestedFoods from '../../components/MostRequestedFoods/MostRequestedFoods';
 
 const Home = () => {
     const {user}= useContext(AuthContext);
@@ -12,9 +13,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <section className='px-4'>
-                <State></State>
                 <ContainerFood></ContainerFood>
-
+                <MostRequestedFoods></MostRequestedFoods>
                 <Feedback></Feedback>
             </section>
         </div>

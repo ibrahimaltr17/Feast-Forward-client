@@ -13,6 +13,7 @@ import axios from "axios";
 import MyFood from "../pages/MyFood/MyFood";
 import RequestedFood from "../pages/RequestedFood/RequestedFood";
 import UpdateFood from "../pages/UpdateFood/UpdateFood";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,29 +31,35 @@ const router = createBrowserRouter([
       },
       {
         path: '/addFood',
-        Component: AddFood
+        element: <PrivateRoute>
+          <AddFood></AddFood>
+        </PrivateRoute>
       },
       {
         path: '/myFood',
-        Component: MyFood
+        element: <PrivateRoute>
+          <MyFood></MyFood>
+        </PrivateRoute>
       },
       {
         path: '/details/:foodId',
         Component: DetailsFood,
         loader: async ({ params }) => {
-          const res = await axios.get(`http://localhost:3000/details/${params.foodId}`)
+          const res = await axios.get(`https://server-feast-forward.vercel.app/details/${params.foodId}`)
           return res.data
         }
       },
       {
         path: '/myRequestedFoods',
-        Component: RequestedFood
+        element: <PrivateRoute>
+          <RequestedFood></RequestedFood>
+        </PrivateRoute>
       },
       {
         path: '/updateFood/:foodId',
         Component: UpdateFood,
         loader: async ({ params }) => {
-          const res = await axios.get(`http://localhost:3000/food/${params.foodId}`);
+          const res = await axios.get(`https://server-feast-forward.vercel.app/food/${params.foodId}`);
           return res.data;
         }
       }

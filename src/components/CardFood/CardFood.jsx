@@ -15,7 +15,10 @@ const CardFood = ({ topFood }) => {
 
                 <div className="card-actions justify-between items-center">
                     <p className='font-semibold text-gray-500'>Quantity: {topFood.quantity}</p>
-                    <button className="btn btn-primary bg-orange-600">View Details</button>
+                    <Link to={`/details/${topFood._id}`}>
+                        <button className="btn btn-primary bg-orange-600">View Details</button>
+                    </Link>
+
 
                 </div>
             </div>

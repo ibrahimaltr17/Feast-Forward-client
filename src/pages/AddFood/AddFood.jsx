@@ -34,7 +34,7 @@ const AddFood = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:3000/addFood', newFood);
+      const res = await axios.post('https://server-feast-forward.vercel.app/addFood', newFood);
       console.log(res.data);
       showSuccess('Done','Your food Added')
     } catch (error) {
