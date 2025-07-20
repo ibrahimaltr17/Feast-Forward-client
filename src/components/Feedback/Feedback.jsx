@@ -3,8 +3,8 @@ import React from 'react';
 const Feedback = () => {
     return (
         <section className='space-y-10 my-20'>
-            <div className='p-3 border-l-8 border-green-800'>
-                <h3 className='text-3xl font-bold text-green-800'>Feedback</h3>
+            <div className='p-3 border-l-8 border-orange-800'>
+                <h3 className='text-3xl font-bold text-orange-800'>Feedback</h3>
             </div>
             <ul className="list bg-base-100 rounded-box shadow-md">
 
