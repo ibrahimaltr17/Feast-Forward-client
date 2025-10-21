@@ -10,16 +10,23 @@ const DetailsFood = () => {
     const [showModal, setShowModal] = useState(false);
     const [additionalNotes, setAdditionalNotes] = useState('');
 
-    const handleRequest = () => {
-        axios.patch(`https://server-feast-forward.vercel.app/requestedFood/${foodData._id}`, {
-            notes: additionalNotes,
-        }, {
-            headers: { Authorization: `Bearer ${user.accessToken}` },
-        })
+    // Updated handleRequest to accept requestedQuantity
+    const handleRequest = (requestedQuantity) => {
+        axios.patch(
+            `https://server-feast-forward.vercel.app/requestedFood/${foodData._id}`,
+            {
+                notes: additionalNotes,
+                quantity: requestedQuantity // send quantity to backend
+            },
+            {
+                headers: { Authorization: `Bearer ${user.accessToken}` },
+            }
+        )
             .then(res => {
                 console.log(res.data);
                 setShowModal(false);
-            });
+            })
+            .catch(err => console.error(err));
     };
 
     // Safe date formatting
@@ -35,7 +42,6 @@ const DetailsFood = () => {
         <div className='p-5 md:p-10 w-11/12 mx-auto space-y-10 pt-24'>
             {/* Food Main Section */}
             <div className='flex flex-col lg:flex-row gap-10 bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 md:p-10 transition-colors duration-300'>
-
                 {/* Image */}
                 <div className='flex-shrink-0'>
                     <img
@@ -115,7 +121,7 @@ const DetailsFood = () => {
                     user={user}
                     additionalNotes={additionalNotes}
                     setAdditionalNotes={setAdditionalNotes}
-                    onSubmit={handleRequest}
+                    onSubmit={handleRequest} // now handles quantity safely
                 />
             )}
         </div>

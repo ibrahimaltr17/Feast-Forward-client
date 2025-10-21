@@ -31,6 +31,8 @@ const RequestedFood = () => {
           <thead className="bg-orange-100 dark:bg-orange-800 text-gray-700 dark:text-gray-200">
             <tr>
               <th className="px-4 py-3 rounded-tl-lg">#</th>
+              <th className="px-4 py-3">Food Name</th>
+              <th className="px-4 py-3">Quantity Requested</th>
               <th className="px-4 py-3">Donor Name</th>
               <th className="px-4 py-3">Pickup Location</th>
               <th className="px-4 py-3">Expire Date</th>
@@ -45,6 +47,8 @@ const RequestedFood = () => {
                   className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
                 >
                   <td className="px-4 py-3 font-medium">{index + 1}</td>
+                  <td className="px-4 py-3">{item.foodName}</td>
+                  <td className="px-4 py-3">{item.requestedQuantity || 1}</td>
                   <td className="px-4 py-3">{item.donorName}</td>
                   <td className="px-4 py-3">{item.pickupLocation}</td>
                   <td className="px-4 py-3">
@@ -57,7 +61,7 @@ const RequestedFood = () => {
               ))
             ) : (
               <tr>
-                <td colSpan={5} className="px-4 py-6 text-center text-gray-500 dark:text-gray-400">
+                <td colSpan={7} className="px-4 py-6 text-center text-gray-500 dark:text-gray-400">
                   No requested foods found.
                 </td>
               </tr>
