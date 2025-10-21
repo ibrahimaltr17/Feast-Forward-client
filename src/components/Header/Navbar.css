@@ -1,13 +1,80 @@
-.menu-horizontal .active{
-    padding-inline: 12px;
-    padding-block: 6px;
-    border-radius: 6px;
-    background-color: #ff4400;
-    font-weight: 700;
-    color: white;
+/* Color palette variables */
+:root {
+    --color-primary: #F97316;
+    /* Deep Orange */
+    --color-secondary: #FCD34D;
+    /* Amber */
+    --color-accent: #EF4444;
+    /* Red */
+    --color-navbar-light: #FFF8E1;
+    /* Light navbar background */
+    --color-navbar-dark: #1F2937;
+    /* Dark navbar background */
+    --color-text-light: #1F2937;
+    /* Dark text */
+    --color-text-dark: #F9FAFB;
+    /* Light text */
 }
 
-.menu-sm .active{
-    background-color: rgb(254, 74, 3);
+/* Dark mode overrides */
+.dark {
+    --color-primary: #FB923C;
+    --color-secondary: #FACC15;
+    --color-accent: #F87171;
+}
+
+/* Navbar links */
+.nav-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary);
+}
+
+/* Active link */
+.menu-horizontal .active,
+.menu-sm .active {
+    background-color: var(--color-primary);
     color: white;
+    font-weight: 700;
+    border-radius: 6px;
+    padding-inline: 12px;
+    padding-block: 6px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    transition: background-color 0.2s;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Dropdown menus */
+.dropdown-content {
+    background-color: var(--color-navbar-light);
+}
+
+.dark .dropdown-content {
+    background-color: var(--color-navbar-dark);
+}
+
+/* Text colors for dark mode */
+.navbar,
+.dropdown-content,
+.menu li a {
+    color: var(--color-text-light);
+}
+
+.dark .navbar,
+.dark .dropdown-content,
+.dark .menu li a {
+    color: var(--color-text-dark);
 }
