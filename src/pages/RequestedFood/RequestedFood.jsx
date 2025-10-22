@@ -8,16 +8,19 @@ const RequestedFood = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const token = await user.getIdToken();
-      const res = await axios.get('https://server-feast-forward.vercel.app/myRequestedFoods', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setRequestedFoods(res.data);
+      try {
+        const token = await user.getIdToken();
+        const res = await axios.get(
+          'https://server-feast-forward.vercel.app/myRequestedFoods',
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        setRequestedFoods(res.data);
+      } catch (error) {
+        console.error('Error fetching requested foods:', error);
+      }
     };
 
-    if (user) {
-      fetchData();
-    }
+    if (user) fetchData();
   }, [user]);
 
   return (
@@ -48,20 +51,27 @@ const RequestedFood = () => {
                 >
                   <td className="px-4 py-3 font-medium">{index + 1}</td>
                   <td className="px-4 py-3">{item.foodName}</td>
-                  <td className="px-4 py-3">{item.requestedQuantity || 1}</td>
+                  <td className="px-4 py-3">{item.requestedQuantity}</td>
                   <td className="px-4 py-3">{item.donorName}</td>
                   <td className="px-4 py-3">{item.pickupLocation}</td>
                   <td className="px-4 py-3">
-                    {item.expireDate ? new Date(item.expireDate).toLocaleString() : 'N/A'}
+                    {item.expireDate
+                      ? new Date(item.expireDate).toLocaleDateString()
+                      : 'N/A'}
                   </td>
                   <td className="px-4 py-3">
-                    {item.requestDate ? new Date(item.requestDate).toLocaleString() : 'N/A'}
+                    {item.requestDate
+                      ? new Date(item.requestDate).toLocaleString()
+                      : 'N/A'}
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={7} className="px-4 py-6 text-center text-gray-500 dark:text-gray-400">
+                <td
+                  colSpan={7}
+                  className="px-4 py-6 text-center text-gray-500 dark:text-gray-400"
+                >
                   No requested foods found.
                 </td>
               </tr>
