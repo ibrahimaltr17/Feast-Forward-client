@@ -34,7 +34,7 @@ const CardMyFood = ({ food, setMyFood }) => {
     };
 
     return (
-        <div className='bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden w-64 mx-auto'>
+        <div className=' rounded-2xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden w-64 mx-auto'>
             {/* Food Image */}
             <div className='h-40 w-full overflow-hidden'>
                 <img
@@ -46,7 +46,7 @@ const CardMyFood = ({ food, setMyFood }) => {
 
             {/* Food Name & Actions */}
             <div className='p-4 flex flex-col items-center gap-3'>
-                <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-100 text-center'>{foodName}</h3>
+                <h3 className='text-lg font-semibold  text-center'>{foodName}</h3>
                 <div className='flex gap-3'>
                     <button
                         onClick={() => navigate(`/updateFood/${_id}`)}

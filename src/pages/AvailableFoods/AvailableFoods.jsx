@@ -22,7 +22,7 @@ const AvailableFoods = () => {
 
     return (
         <div className='my-20 space-y-10 mx-auto px-4 max-w-[1400px]'>
-            <h2 className='text-center text-4xl font-bold text-gray-800 dark:text-gray-100'>Available Foods</h2>
+            <h2 className='text-center text-4xl font-bold text-orange-600 '>Available Foods</h2>
 
             {/* Search & Layout Toggle */}
             <div className="flex flex-col items-center justify-between gap-4 md:gap-6">

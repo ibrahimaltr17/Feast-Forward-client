@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const CardFood = ({ topFood }) => {
 
     return (
-        <div className="card bg-white dark:bg-gray-800 w-full max-w-sm mx-auto rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+        <div className="card  w-full max-w-sm mx-auto rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
 
             {/* Food Image */}
             <figure className="h-52 overflow-hidden">
@@ -17,18 +17,18 @@ const CardFood = ({ topFood }) => {
 
             {/* Card Body */}
             <div className="card-body p-5">
-                <h2 className="card-title text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100">
+                <h2 className="card-title text-xl md:text-2xl font-bold ">
                     {topFood.foodName}
                 </h2>
 
                 {/* Food Info */}
-                <p className="text-gray-500 dark:text-gray-300 mt-2 font-medium">
+                <p className=" mt-2 font-medium">
                     Quantity: {topFood.quantity}
                 </p>
-                <p className="text-gray-500 dark:text-gray-300 font-medium">
+                <p className=" font-medium">
                     Location: {topFood.location} {topFood.pickupLocation ? `(${topFood.pickupLocation})` : ''}
                 </p>
-                <p className="text-gray-700 dark:text-gray-200 font-medium">
+                <p className=" font-medium">
                     Donor: {topFood.donorName}
                 </p>
 

@@ -17,7 +17,7 @@ const MyFood = () => {
 
     return (
         <div className='my-20 px-4 space-y-10 max-w-7xl mx-auto'>
-            <h1 className='text-4xl text-center font-bold text-gray-800 dark:text-gray-100'>
+            <h1 className='text-4xl text-center font-bold text-orange-500'>
                 Manage Your Food Donations
             </h1>
             {myFood.length > 0 ? (

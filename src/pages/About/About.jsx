@@ -87,9 +87,9 @@ const About = () => {
                         Whether you want to donate food or receive meals, together we can make a real impact.
                         Every plate shared brings hope and care to someone in need.
                     </p>
-                    <button className="px-6 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white font-medium transition-colors duration-300">
+                    {/* <button className="px-6 py-3 rounded-full bg-green-600 hover:bg-green-700 text-white font-medium transition-colors duration-300">
                         Get Started
-                    </button>
+                    </button> */}
                 </motion.div>
             </div>
         </div>

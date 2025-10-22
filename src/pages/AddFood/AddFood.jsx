@@ -42,15 +42,15 @@ const AddFood = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto my-14 p-8 bg-white dark:bg-gray-900 shadow-xl rounded-3xl transition-colors duration-300">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
+    <div className="max-w-3xl mx-auto my-14 p-8  shadow-xl rounded-3xl transition-colors duration-300">
+      <h2 className="text-3xl font-bold text-orange-500 text-center mb-8 ">
         Add Food Donation
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Food Name */}
         <div>
-          <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-1">Food Name</label>
+          <label className="block font-semibold  mb-1">Food Name</label>
           <input
             type="text"
             name="foodName"
@@ -64,7 +64,7 @@ const AddFood = () => {
 
         {/* Food Image */}
         <div>
-          <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-1">Food Image URL</label>
+          <label className="block font-semibold  mb-1">Food Image URL</label>
           <input
             type="url"
             name="foodImage"
@@ -79,7 +79,7 @@ const AddFood = () => {
         {/* Quantity & Location */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-1">Quantity</label>
+            <label className="block font-semibold  mb-1">Quantity</label>
             <input
               type="number"
               name="quantity"
@@ -91,7 +91,7 @@ const AddFood = () => {
             />
           </div>
           <div>
-            <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-1">Pickup Location</label>
+            <label className="block font-semibold  mb-1">Pickup Location</label>
             <input
               type="text"
               name="location"
@@ -105,7 +105,7 @@ const AddFood = () => {
 
         {/* Expiry Date */}
         <div>
-          <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-1">Expiry Date & Time</label>
+          <label className="block font-semibold  mb-1">Expiry Date & Time</label>
           <input
             type="datetime-local"
             name="expiry"
@@ -118,7 +118,7 @@ const AddFood = () => {
 
         {/* Notes */}
         <div>
-          <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-1">Additional Notes</label>
+          <label className="block font-semibold  mb-1">Additional Notes</label>
           <textarea
             name="notes"
             rows="4"

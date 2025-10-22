@@ -8,7 +8,7 @@ const CardAvailFood = ({ allFood }) => {
         : allFood.expiry;
 
     return (
-        <div className='bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col md:flex-row gap-4 p-4'>
+        <div className=' rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col md:flex-row gap-4 p-4'>
 
             {/* Food Image */}
             <div className='w-full md:w-40 h-40 md:h-auto overflow-hidden rounded-xl'>
@@ -26,12 +26,12 @@ const CardAvailFood = ({ allFood }) => {
                     <p className='text-sm font-medium text-green-600 dark:text-green-400'>Available</p>
                 </div>
 
-                <h3 className='text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100'>{allFood.foodName}</h3>
+                <h3 className='text-xl md:text-2xl font-bold '>{allFood.foodName}</h3>
 
-                <p className='text-gray-500 dark:text-gray-300 font-medium'>Quantity: {allFood.quantity}</p>
-                <p className='text-gray-500 dark:text-gray-300 font-medium'>Location: {allFood.location} {allFood.pickupLocation ? `(${allFood.pickupLocation})` : ''}</p>
-                <p className='text-red-600 dark:text-red-400 font-semibold'>Expiry: {expiryDate}</p>
-                <p className='text-gray-700 dark:text-gray-200 font-medium'>Donor: {allFood.donorName}</p>
+                <p className='text-gray-400  font-medium'>Quantity: {allFood.quantity}</p>
+                <p className='text-gray-400  font-medium'>Location: {allFood.location} {allFood.pickupLocation ? `(${allFood.pickupLocation})` : ''}</p>
+                <p className='text-red-600 font-semibold'>Expiry: {expiryDate}</p>
+                <p className='text-gray-600  font-medium'>Donor: {allFood.donorName}</p>
 
                 <Link to={`/details/${allFood._id}`} className='mt-3'>
                     <button className='btn bg-orange-600 hover:bg-orange-700 text-white w-full md:w-auto transition-colors duration-300 rounded-md'>
