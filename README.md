@@ -1,44 +1,58 @@
-# FeastForward
+# Feast Forward
 
-## Purpose
 
-FeastForward is a food-sharing web application designed to reduce food waste by connecting donors who have surplus food with people in need. Users can add available food items, view shared food, and manage their contributions easily via a simple and intuitive interface.
-
-## Live URL
-
-[https://feast-forward.web.app/](https://feast-forward.web.app/)
-
-## Key Features
-
-- User Authentication (Login/Signup)  
-- Add Food: Donors can add food details including name, image, quantity, pickup location, expiration time, and notes  
-- Food Listing: Browse all available food items with images and details  
-- Update Food: Donors can edit or update their food entries  
-- Food Status Tracking (e.g., Available, Picked Up)  
-- Display donor info (name, email, image) automatically from logged-in user data  
-- Responsive UI with easy navigation  
-- Favorites / Most Requested foods (planned or implemented)  
-- Server-side data handling with RESTful API  
-- Secure backend with MongoDB and Node.js  
-
-## npm Packages Used
-
-### Frontend (React)
-
-- `react` & `react-dom` — Core React library for building UI  
-- `react-router-dom` — Routing between pages/components  
-- `axios` — HTTP client for API calls  
-- `tailwindcss` — Utility-first CSS framework for styling  
-
-### Backend (Node.js)
-
-- `express` — Web server framework  
-- `cors` — Middleware for Cross-Origin Resource Sharing  
-- `mongodb` — MongoDB Node.js driver  
-- `dotenv` — Environment variable management  
-- `jsonwebtoken` — JWT based authentication (if implemented)  
-- `bcrypt` — Password hashing (if implemented)  
+**Feast Forward** is a **Food Sharing Website** designed to reduce food waste and promote community sharing. The platform allows users to **share surplus food**, **request available food**, and **manage food requests** through an intuitive and user-friendly interface.
 
 ---
 
-Feel free to ask if you want me to generate a full `.md` file or a more detailed version including installation, setup instructions, or API endpoint documentation!
+## 🌐 Live Demo
+
+- **Frontend:** [Live Link Here](https://feast-forward.web.app/)   
+
+---
+
+## 🏛 Project Overview
+
+Feast Forward provides a digital platform where:
+
+- Individuals or organizations can **donate extra food**.  
+- People in need can **request or receive food**.  
+- All interactions are tracked through a **user-friendly interface**.
+
+---
+
+## 👥 User Roles
+
+1. **User (Default)**
+   - Add, view, update, and delete their shared foods.  
+   - Request food shared by others.  
+   - Manage requested food list.
+
+2. **Admin (Optional Enhancement)**
+   - Monitor all food listings and requests.  
+   - Remove inappropriate listings or manage users.
+
+---
+
+## ⚙️ Core Features
+
+- 🍱 **Add Food:** Share food with details such as name, image, quantity, and pickup location.  
+- 📦 **Manage Foods:** Update or delete shared items.  
+- 🔎 **Browse Available Foods:** View all foods available for request.  
+- 🙌 **Request Food:** Request food directly through the platform.  
+- 📋 **Manage Requests:** Track, update, or cancel food requests.  
+- 🧭 **Dashboard (optional):** Personalized dashboard for managing shared and requested food.
+
+---
+
+## 💻 Technology Stack
+
+- **Frontend:** React.js, Tailwind CSS  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Authentication:** Firebase or JWT-based authentication  
+- **Hosting & Deployment:** Vercel (frontend), Render / Netlify (backend)
+
+---
+
+![Feast Forward Landing Page](https://i.ibb.co/YourLandingPageImage.png)
